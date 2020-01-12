@@ -1,0 +1,4 @@
+﻿  ui.cpp
+E:\编程\C++代码\CppPractice\src\CppPractice\ui.cpp(124,24): warning C4838: 从“int”转换到“SHORT”需要收缩转换
+E:\编程\C++代码\CppPractice\src\CppPractice\ui.cpp(124,26): warning C4838: 从“int”转换到“SHORT”需要收缩转换
+  CppPractice.vcxproj -> E:\编程\C++代码\CppPractice\src\CppPractice\Debug\CppPractice.exe
