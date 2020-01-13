@@ -1,0 +1,43 @@
+# Project: MyDict
+# Makefile created by Dev-C++ 5.11
+
+CPP      = g++.exe -D__DEBUG__
+CC       = gcc.exe -D__DEBUG__
+WINDRES  = windres.exe
+OBJ      = MyDict.o ui.o dict.o exam.o glossary.o review.o
+LINKOBJ  = MyDict.o ui.o dict.o exam.o glossary.o review.o
+LIBS     = -L"E:/QLDownload/Dev-Cpp/MinGW64/lib" -L"E:/QLDownload/Dev-Cpp/MinGW64/x86_64-w64-mingw32/lib" -static-libgcc -g3
+INCS     = -I"E:/QLDownload/Dev-Cpp/MinGW64/include" -I"E:/QLDownload/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include" -I"E:/QLDownload/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include"
+CXXINCS  = -I"E:/QLDownload/Dev-Cpp/MinGW64/include" -I"E:/QLDownload/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include" -I"E:/QLDownload/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include" -I"E:/QLDownload/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include/c++"
+BIN      = MyDict.exe
+CXXFLAGS = $(CXXINCS) -g3
+CFLAGS   = $(INCS) -g3
+RM       = rm.exe -f
+
+.PHONY: all all-before all-after clean clean-custom
+
+all: all-before $(BIN) all-after
+
+clean: clean-custom
+	${RM} $(OBJ) $(BIN)
+
+$(BIN): $(OBJ)
+	$(CPP) $(LINKOBJ) -o $(BIN) $(LIBS)
+
+MyDict.o: MyDict.cpp
+	$(CPP) -c MyDict.cpp -o MyDict.o $(CXXFLAGS)
+
+ui.o: ui.cpp
+	$(CPP) -c ui.cpp -o ui.o $(CXXFLAGS)
+
+dict.o: dict.cpp
+	$(CPP) -c dict.cpp -o dict.o $(CXXFLAGS)
+
+exam.o: exam.cpp
+	$(CPP) -c exam.cpp -o exam.o $(CXXFLAGS)
+
+glossary.o: glossary.cpp
+	$(CPP) -c glossary.cpp -o glossary.o $(CXXFLAGS)
+
+review.o: review.cpp
+	$(CPP) -c review.cpp -o review.o $(CXXFLAGS)
